@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter import messagebox
+from tkinter import messagebox # TODO: Remove this as it is imported
 
 root = Tk()
 
@@ -39,8 +39,7 @@ label_3.grid(row=2, column=2)
 
 
 # CONVERTING FUNCTIONS 
-
-
+# TODO: Put those function in another file and import them
 def bin_to_bin(b):
     return (bin(int(str(b), 2)))
 
@@ -111,7 +110,7 @@ def convert():
     if entry.get() == "":
         messagebox.showinfo("EMPTY", "Please enter value.")
 
-    elif var_a[0].get() == 1 and var_b[0].get() == 1:
+    elif var_a[0].get() == 1 and var_b[0].get() == 1: # TODO: try nested conditions
         try:
             label_answer = Label(root, text=bin_to_bin(entry.get())[2:])
             label_space.grid(row=9, column=2)
@@ -239,7 +238,7 @@ var_a4 = IntVar()
 
 var_a = [var_a1, var_a2, var_a3, var_a4]
 
-
+# TODO: Rename methods to explain more on what they do
 def cb_a():
     global now_a, buttons_a
     if None != now_a:
