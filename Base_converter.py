@@ -1,4 +1,3 @@
-#TODO: Rename the file with lowercase
 from tkinter import *
 from tkinter import messagebox # TODO: Remove this as it is imported
 from converter_functions import *
@@ -48,168 +47,172 @@ def convert():
     if entry.get() == "":
         messagebox.showinfo("EMPTY", "Please enter value.")
 
-    elif var_a[0].get() == 1 and var_b[0].get() == 1: # TODO: try nested conditions
-        try:
-            label_answer = Label(root, text=bin_to_bin(entry.get())[2:])
-            label_space.grid(row=9, column=2)
-            label_answer.grid(row=9, column=2)
-            file = open(filename,"a")
-            file.write("Binary To Binary: "+str(entry.get())+" => "+str(bin_to_bin(entry.get())[2:])+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly '0' and '1' are accepted.")
+    elif (var_a[0].get() == 1):
+        if (var_b[0].get() == 1): # TODO: try nested conditions
+            try:
+                label_answer = Label(root, text=bin_to_bin(entry.get())[2:])
+                label_space.grid(row=9, column=2)
+                label_answer.grid(row=9, column=2)
+                file = open(filename,"a")
+                file.write("Binary To Binary: "+str(entry.get())+" => "+str(bin_to_bin(entry.get())[2:])+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly '0' and '1' are accepted.")
 
-    elif var_a[0].get() == 1 and var_b[1].get() == 1:
-        try:
-            label_answer = Label(root, text=bin_to_dec(entry.get()))
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Binary To Decimal: " + str(entry.get()) + " => " + str(bin_to_dec(entry.get()))+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly '0' and '1' are accepted.")
+        elif var_b[1].get() == 1:
+            try:
+                label_answer = Label(root, text=bin_to_dec(entry.get()))
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Binary To Decimal: " + str(entry.get()) + " => " + str(bin_to_dec(entry.get()))+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly '0' and '1' are accepted.")
 
-    elif var_a[0].get() == 1 and var_b[2].get() == 1:
-        try:
-            label_answer = Label(root, text=bin_to_oct(entry.get())[2:])
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Binary To Octal: " + str(entry.get()) + " => " + str(bin_to_oct(entry.get())[2:])+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly '0' and '1' are accepted.")
-    elif var_a[0].get() == 1 and var_b[3].get() == 1:
-        try:
-            label_answer = Label(root, text=bin_to_hex(entry.get()).upper()[2:])
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Binary To Hexa Decimal: " + str(entry.get()) + " => " + str(bin_to_hex(entry.get()).upper()[2:])+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly '0' and '1' are accepted.")
+        elif var_b[2].get() == 1:
+            try:
+                label_answer = Label(root, text=bin_to_oct(entry.get())[2:])
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Binary To Octal: " + str(entry.get()) + " => " + str(bin_to_oct(entry.get())[2:])+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly '0' and '1' are accepted.")
+        elif var_b[3].get() == 1:
+            try:
+                label_answer = Label(root, text=bin_to_hex(entry.get()).upper()[2:])
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Binary To Hexa Decimal: " + str(entry.get()) + " => " + str(bin_to_hex(entry.get()).upper()[2:])+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly '0' and '1' are accepted.")
 
-    elif var_a[1].get() == 1 and var_b[0].get() == 1:
-        try:
-            label_answer = Label(root, text=dec_to_bin(entry.get())[2:])
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Decimal To Binary: " + str(entry.get()) + " => " + str(dec_to_bin(entry.get())[2:])+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly numbers are accepted.")
+    elif var_a[1].get() == 1: 
+        if var_b[0].get() == 1:
+            try:
+                label_answer = Label(root, text=dec_to_bin(entry.get())[2:])
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Decimal To Binary: " + str(entry.get()) + " => " + str(dec_to_bin(entry.get())[2:])+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly numbers are accepted.")
 
-    elif var_a[1].get() == 1 and var_b[1].get() == 1:
-        try:
-            label_answer = Label(root, text=dec_to_dec(entry.get()))
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Decimal To Decimal: " + str(entry.get()) + " => " + str(dec_to_dec(entry.get()))+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly numbers are accepted.")
+        elif var_b[1].get() == 1:
+            try:
+                label_answer = Label(root, text=dec_to_dec(entry.get()))
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Decimal To Decimal: " + str(entry.get()) + " => " + str(dec_to_dec(entry.get()))+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly numbers are accepted.")
 
-    elif var_a[1].get() == 1 and var_b[2].get() == 1:
-        try:
-            label_answer = Label(root, text=dec_to_oct(entry.get())[2:])
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Decimal To Octal: " + str(entry.get()) + " => " + str(dec_to_oct(entry.get())[2:])+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly numbers are accepted")
+        elif var_b[2].get() == 1:
+            try:
+                label_answer = Label(root, text=dec_to_oct(entry.get())[2:])
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Decimal To Octal: " + str(entry.get()) + " => " + str(dec_to_oct(entry.get())[2:])+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly numbers are accepted")
 
-    elif var_a[1].get() == 1 and var_b[3].get() == 1:
-        try:
-            label_answer = Label(root, text=dec_to_hex(entry.get()).upper()[2:])
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Decimal To Hexa Decimal: " + str(entry.get()) + " => " + str(dec_to_hex(entry.get()).upper()[2:])+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly numbers are accepted.")
+        elif var_b[3].get() == 1:
+            try:
+                label_answer = Label(root, text=dec_to_hex(entry.get()).upper()[2:])
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Decimal To Hexa Decimal: " + str(entry.get()) + " => " + str(dec_to_hex(entry.get()).upper()[2:])+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly numbers are accepted.")
 
-    elif var_a[2].get() == 1 and var_b[0].get() == 1:
-        try:
-            label_answer = Label(root, text=oct_to_bin(entry.get())[2:])
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Octal To Binary: " + str(entry.get()) + " => " + str(oct_to_bin(entry.get())[2:])+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly 0 to 7 numbers are accepted.")
+    elif var_a[2].get() == 1: 
+        if var_b[0].get() == 1:
+            try:
+                label_answer = Label(root, text=oct_to_bin(entry.get())[2:])
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Octal To Binary: " + str(entry.get()) + " => " + str(oct_to_bin(entry.get())[2:])+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly 0 to 7 numbers are accepted.")
 
-    elif var_a[2].get() == 1 and var_b[1].get() == 1:
-        try:
-            label_answer = Label(root, text=oct_to_dec(entry.get()))
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Octal To Decimal: " + str(entry.get()) + " => " + str(oct_to_dec(entry.get()))+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly 0 to 7 numbers are accepted.")
+        elif var_b[1].get() == 1:
+            try:
+                label_answer = Label(root, text=oct_to_dec(entry.get()))
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Octal To Decimal: " + str(entry.get()) + " => " + str(oct_to_dec(entry.get()))+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly 0 to 7 numbers are accepted.")
 
-    elif var_a[2].get() == 1 and var_b[2].get() == 1:
-        try:
-            label_answer = Label(root, text=oct_to_oct(entry.get())[2:])
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Octal To Ocatl: " + str(entry.get()) + " => " + str(oct_to_oct(entry.get())[2:])+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly 0 to 7 numbers are accepted.")
+        elif var_b[2].get() == 1:
+            try:
+                label_answer = Label(root, text=oct_to_oct(entry.get())[2:])
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Octal To Ocatl: " + str(entry.get()) + " => " + str(oct_to_oct(entry.get())[2:])+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly 0 to 7 numbers are accepted.")
 
-    elif var_a[2].get() == 1 and var_b[3].get() == 1:
-        try:
-            label_answer = Label(root, text=oct_to_hex(entry.get()).upper()[2:])
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Octal To Hexa Decimal: " + str(entry.get()) + " => " + str(oct_to_hex(entry.get()).upper()[2:])+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly 0 to 7 numbers are accepted.")
+        elif var_b[3].get() == 1:
+            try:
+                label_answer = Label(root, text=oct_to_hex(entry.get()).upper()[2:])
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Octal To Hexa Decimal: " + str(entry.get()) + " => " + str(oct_to_hex(entry.get()).upper()[2:])+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly 0 to 7 numbers are accepted.")
 
-    elif var_a[3].get() == 1 and var_b[0].get() == 1:
-        try:
-            label_answer = Label(root, text=hex_to_bin(entry.get())[2:])
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Hexa Decimal To Binary: " + str(entry.get()) + " => " + str(hex_to_bin(entry.get())[2:])+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT",
-                                "You have entered invalid input.\nOnly 0 to 9 and 'A' to 'F' are accepted.")
+    elif var_a[3].get() == 1: 
+        if var_b[0].get() == 1:
+            try:
+                label_answer = Label(root, text=hex_to_bin(entry.get())[2:])
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Hexa Decimal To Binary: " + str(entry.get()) + " => " + str(hex_to_bin(entry.get())[2:])+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT",
+                                    "You have entered invalid input.\nOnly 0 to 9 and 'A' to 'F' are accepted.")
 
-    elif var_a[3].get() == 1 and var_b[1].get() == 1:
-        try:
-            label_answer = Label(root, text=hex_to_dec(entry.get()))
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Hexa Decimal To Decimal: " + str(entry.get()) + " => " + str(hex_to_dec(entry.get()))+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT",
-                                "You have entered invalid input.\nOnly 0 to 9 and 'A' to 'F' are accepted.")
+        elif var_b[1].get() == 1:
+            try:
+                label_answer = Label(root, text=hex_to_dec(entry.get()))
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Hexa Decimal To Decimal: " + str(entry.get()) + " => " + str(hex_to_dec(entry.get()))+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT",
+                                    "You have entered invalid input.\nOnly 0 to 9 and 'A' to 'F' are accepted.")
 
-    elif var_a[3].get() == 1 and var_b[2].get() == 1:
-        try:
-            label_answer = Label(root, text=hex_to_oct(entry.get())[2:])
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Hexa Decimal To Octal: " + str(entry.get()) + " => " + str(hex_to_oct(entry.get())[2:])+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT",
-                                "You have entered invalid input.\nOnly 0 to 9 and 'A' to 'F' are accepted.")
+        elif var_b[2].get() == 1:
+            try:
+                label_answer = Label(root, text=hex_to_oct(entry.get())[2:])
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Hexa Decimal To Octal: " + str(entry.get()) + " => " + str(hex_to_oct(entry.get())[2:])+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT",
+                                    "You have entered invalid input.\nOnly 0 to 9 and 'A' to 'F' are accepted.")
 
-    elif var_a[3].get() == 1 and var_b[3].get() == 1:
-        try:
-            label_answer = Label(root, text=hex_to_hex(entry.get()).upper()[2:])
-            label_answer.grid(row=9, column=2)
-            file = open(filename, "a")
-            file.write("Hexa Decimal To Hexa Decimal: " + str(entry.get()) + " => " + str(hex_to_hex(entry.get()).upper()[2:])+"\n")
-            file.close()
-        except:
-            messagebox.showinfo("ERROR INPUT","You have entered invalid input.\nOnly 0 to 9 and 'A' to 'F' are accepted.")
+        elif var_b[3].get() == 1:
+            try:
+                label_answer = Label(root, text=hex_to_hex(entry.get()).upper()[2:])
+                label_answer.grid(row=9, column=2)
+                file = open(filename, "a")
+                file.write("Hexa Decimal To Hexa Decimal: " + str(entry.get()) + " => " + str(hex_to_hex(entry.get()).upper()[2:])+"\n")
+                file.close()
+            except:
+                messagebox.showinfo("ERROR INPUT","You have entered invalid input.\nOnly 0 to 9 and 'A' to 'F' are accepted.")
 
     else:
         messagebox.showinfo("REQUIREMENT", "Choose options on the both side")
@@ -224,8 +227,7 @@ var_a4 = IntVar()
 
 var_a = [var_a1, var_a2, var_a3, var_a4]
 
-# TODO: Rename methods to explain more on what they do
-def cb_a():
+def select_function():
     global now_a, buttons_a
     if None != now_a:
         buttons_a[now_a].deselect()
@@ -238,11 +240,10 @@ def cb_a():
 
 x_a = ["Binary", "Decimal", "Octal", "Hexa Decimal"]
 y_a = 3
-buttons_a = [Checkbutton(root, text=x_a[i], variable=var_a[i], command=cb_a) for i in range(4)]
+buttons_a = [Checkbutton(root, text=x_a[i], variable=var_a[i], command=select_function) for i in range(4)]
 for b in buttons_a:
     b.grid(row=y_a, sticky=W)
     y_a = y_a + 1
-
 
 
 now_b = None
@@ -255,7 +256,7 @@ var_a4 = IntVar()
 var_b = [var_a1, var_a2, var_a3, var_a4]
 
 
-def cb_b():
+def deselekt_function():
     global now_b, buttons_b
     if None != now_b:
         buttons_b[now_b].deselect()
@@ -268,7 +269,7 @@ def cb_b():
 
 x_b = ["Binary", "Decimal", "Octal", "Hexa Decimal"]
 y_b = 3
-buttons_b = [Checkbutton(root, text=x_b[i], variable=var_b[i], command=cb_b) for i in range(4)]
+buttons_b = [Checkbutton(root, text=x_b[i], variable=var_b[i], command=deselekt_function) for i in range(4)]
 for b in buttons_b:
     b.grid(row=y_b, column=2, sticky=W)
     y_b = y_b + 1

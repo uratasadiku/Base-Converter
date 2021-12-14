@@ -1,4 +1,3 @@
-
 def bin_to_bin(b):
     return (bin(int(str(b), 2)))
 
