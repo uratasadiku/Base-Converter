@@ -1,1 +1,5 @@
 Decimal To Binary: 43 => 101011
+Binary To Decimal: 1011 => 11
+Binary To Decimal: 10111 => 23
+Decimal To Binary: 25 => 11001
+Decimal To Binary: 43 => 101011
