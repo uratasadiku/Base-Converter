@@ -6,3 +6,4 @@ Decimal To Binary: 43 => 101011
 Binary To Decimal: 1011 => 11
 Decimal To Octal: 436 => 664
 Decimal To Octal: 436 => 664
+Decimal To Binary: 23 => 10111
