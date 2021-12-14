@@ -1,4 +1,4 @@
-# TODO: Rename the file with lowercase
+#TODO: Rename the file with lowercase
 from tkinter import *
 from tkinter import messagebox # TODO: Remove this as it is imported
 
@@ -106,7 +106,7 @@ def hex_to_hex(h):
 
 
 def convert():
-    
+    filename = "history.txt"
     label_space: Label = Label(root, text="                   ")
     if entry.get() == "":
         messagebox.showinfo("EMPTY", "Please enter value.")
@@ -116,6 +116,9 @@ def convert():
             label_answer = Label(root, text=bin_to_bin(entry.get())[2:])
             label_space.grid(row=9, column=2)
             label_answer.grid(row=9, column=2)
+            file = open(filename,"a")
+            file.write("Binary To Binary: "+str(entry.get())+" => "+str(bin_to_bin(entry.get())[2:])+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly '0' and '1' are accepted.")
 
@@ -123,6 +126,9 @@ def convert():
         try:
             label_answer = Label(root, text=bin_to_dec(entry.get()))
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Binary To Decimal: " + str(entry.get()) + " => " + str(bin_to_dec(entry.get()))+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly '0' and '1' are accepted.")
 
@@ -130,12 +136,18 @@ def convert():
         try:
             label_answer = Label(root, text=bin_to_oct(entry.get())[2:])
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Binary To Octal: " + str(entry.get()) + " => " + str(bin_to_oct(entry.get())[2:])+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly '0' and '1' are accepted.")
     elif var_a[0].get() == 1 and var_b[3].get() == 1:
         try:
             label_answer = Label(root, text=bin_to_hex(entry.get()).upper()[2:])
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Binary To Hexa Decimal: " + str(entry.get()) + " => " + str(bin_to_hex(entry.get()).upper()[2:])+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly '0' and '1' are accepted.")
 
@@ -143,6 +155,9 @@ def convert():
         try:
             label_answer = Label(root, text=dec_to_bin(entry.get())[2:])
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Decimal To Binary: " + str(entry.get()) + " => " + str(dec_to_bin(entry.get())[2:])+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly numbers are accepted.")
 
@@ -150,6 +165,9 @@ def convert():
         try:
             label_answer = Label(root, text=dec_to_dec(entry.get()))
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Decimal To Decimal: " + str(entry.get()) + " => " + str(dec_to_dec(entry.get()))+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly numbers are accepted.")
 
@@ -157,6 +175,9 @@ def convert():
         try:
             label_answer = Label(root, text=dec_to_oct(entry.get())[2:])
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Decimal To Octal: " + str(entry.get()) + " => " + str(dec_to_oct(entry.get())[2:])+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly numbers are accepted")
 
@@ -164,6 +185,9 @@ def convert():
         try:
             label_answer = Label(root, text=dec_to_hex(entry.get()).upper()[2:])
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Decimal To Hexa Decimal: " + str(entry.get()) + " => " + str(dec_to_hex(entry.get()).upper()[2:])+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly numbers are accepted.")
 
@@ -171,6 +195,9 @@ def convert():
         try:
             label_answer = Label(root, text=oct_to_bin(entry.get())[2:])
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Octal To Binary: " + str(entry.get()) + " => " + str(oct_to_bin(entry.get())[2:])+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly 0 to 7 numbers are accepted.")
 
@@ -178,6 +205,9 @@ def convert():
         try:
             label_answer = Label(root, text=oct_to_dec(entry.get()))
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Octal To Decimal: " + str(entry.get()) + " => " + str(oct_to_dec(entry.get()))+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly 0 to 7 numbers are accepted.")
 
@@ -185,6 +215,9 @@ def convert():
         try:
             label_answer = Label(root, text=oct_to_oct(entry.get())[2:])
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Octal To Ocatl: " + str(entry.get()) + " => " + str(oct_to_oct(entry.get())[2:])+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly 0 to 7 numbers are accepted.")
 
@@ -192,6 +225,9 @@ def convert():
         try:
             label_answer = Label(root, text=oct_to_hex(entry.get()).upper()[2:])
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Octal To Hexa Decimal: " + str(entry.get()) + " => " + str(oct_to_hex(entry.get()).upper()[2:])+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT", "You have entered invalid input.\nOnly 0 to 7 numbers are accepted.")
 
@@ -199,6 +235,9 @@ def convert():
         try:
             label_answer = Label(root, text=hex_to_bin(entry.get())[2:])
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Hexa Decimal To Binary: " + str(entry.get()) + " => " + str(hex_to_bin(entry.get())[2:])+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT",
                                 "You have entered invalid input.\nOnly 0 to 9 and 'A' to 'F' are accepted.")
@@ -207,6 +246,9 @@ def convert():
         try:
             label_answer = Label(root, text=hex_to_dec(entry.get()))
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Hexa Decimal To Decimal: " + str(entry.get()) + " => " + str(hex_to_dec(entry.get()))+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT",
                                 "You have entered invalid input.\nOnly 0 to 9 and 'A' to 'F' are accepted.")
@@ -215,6 +257,9 @@ def convert():
         try:
             label_answer = Label(root, text=hex_to_oct(entry.get())[2:])
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Hexa Decimal To Octal: " + str(entry.get()) + " => " + str(hex_to_oct(entry.get())[2:])+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT",
                                 "You have entered invalid input.\nOnly 0 to 9 and 'A' to 'F' are accepted.")
@@ -223,6 +268,9 @@ def convert():
         try:
             label_answer = Label(root, text=hex_to_hex(entry.get()).upper()[2:])
             label_answer.grid(row=9, column=2)
+            file = open(filename, "a")
+            file.write("Hexa Decimal To Hexa Decimal: " + str(entry.get()) + " => " + str(hex_to_hex(entry.get()).upper()[2:])+"\n")
+            file.close()
         except:
             messagebox.showinfo("ERROR INPUT","You have entered invalid input.\nOnly 0 to 9 and 'A' to 'F' are accepted.")
 
@@ -292,6 +340,23 @@ for b in buttons_b:
 button_convert = Button(root, text="CONVERT", bd=5, relief="groove", bg="#0BD72D", width=15,  command=convert)
 button_convert.grid(row=7, columnspan=3)
 
+def history():
+    try:
+        filename = "history.txt"
+        file = open(filename, "r")
+        data = file.readlines()
+        m = ""
+        for i in data:
+            m = m + str(i) + "\n"
+        messagebox.showinfo("HISTORY", str(m))
+        file.close()
+    except:
+        messagebox.showinfo("EMPTY","There are no histoty recorded.")
+
+
+btn_history = Button(root, text="HISTORY", bd=5, width=15, bg="grey", relief="groove", command=history)
+btn_history.grid(row=1, column=4)
+
 label_space.grid(row=8)
 
 l_bin = Label(root, text="Answer: ")
@@ -305,7 +370,7 @@ def exit():
     if messagebox.askyesno('Exit','Do you really want to Exit'):
         root.destroy()
 
-btn_exit = Button(root, text="EXIT", bd=5, width=15, bg="red", relief="groove", command=exit)
-btn_exit.grid(row=1, column=4)
+btn_exit = Button(root, text="EXIT", bd=5, width=15,bg="red", relief="groove", command=exit)
+btn_exit.grid(row=2, column=4)
 
 root.mainloop()
