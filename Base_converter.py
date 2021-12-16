@@ -39,7 +39,7 @@ label_3 = Label(root, text="Convert Base To:")
 label_3.grid(row=2, column=2)
 
 
-# CONVERTING FUNCTIONS 
+# CONVERTING FUNCTION 
 
 def convert():
     filename = "history.txt"
@@ -227,7 +227,7 @@ var_a4 = IntVar()
 
 var_a = [var_a1, var_a2, var_a3, var_a4]
 
-def select_function():
+def column_a():
     global now_a, buttons_a
     if None != now_a:
         buttons_a[now_a].deselect()
@@ -240,11 +240,12 @@ def select_function():
 
 x_a = ["Binary", "Decimal", "Octal", "Hexa Decimal"]
 y_a = 3
-buttons_a = [Checkbutton(root, text=x_a[i], variable=var_a[i], command=select_function) for i in range(4)]
+buttons_a = [Checkbutton(root, text=x_a[i], variable=var_a[i], command=column_a) for i in range(4)]
 for b in buttons_a:
     b.grid(row=y_a, sticky=W)
     y_a = y_a + 1
 
+# COLUMN A SEPERATES B 
 
 now_b = None
 buttons_b = None
@@ -256,7 +257,7 @@ var_a4 = IntVar()
 var_b = [var_a1, var_a2, var_a3, var_a4]
 
 
-def deselekt_function():
+def column_b():
     global now_b, buttons_b
     if None != now_b:
         buttons_b[now_b].deselect()
@@ -269,12 +270,12 @@ def deselekt_function():
 
 x_b = ["Binary", "Decimal", "Octal", "Hexa Decimal"]
 y_b = 3
-buttons_b = [Checkbutton(root, text=x_b[i], variable=var_b[i], command=deselekt_function) for i in range(4)]
+buttons_b = [Checkbutton(root, text=x_b[i], variable=var_b[i], command=column_b) for i in range(4)]
 for b in buttons_b:
     b.grid(row=y_b, column=2, sticky=W)
     y_b = y_b + 1
 
-
+#START OF RESULT SECTION
 button_convert = Button(root, text="CONVERT", bd=5, relief="groove", bg="#0BD72D", width=15,  command=convert)
 button_convert.grid(row=7, columnspan=3)
 
