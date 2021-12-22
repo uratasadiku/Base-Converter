@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter import messagebox # TODO: Remove this as it is imported
+from tkinter import messagebox 
 from converter_functions import *
 
 root = Tk()
@@ -48,7 +48,7 @@ def convert():
         messagebox.showinfo("EMPTY", "Please enter value.")
 
     elif (var_a[0].get() == 1):
-        if (var_b[0].get() == 1): # TODO: try nested conditions
+        if (var_b[0].get() == 1): 
             try:
                 label_answer = Label(root, text=bin_to_bin(entry.get())[2:])
                 label_space.grid(row=9, column=2)
@@ -217,7 +217,7 @@ def convert():
     else:
         messagebox.showinfo("REQUIREMENT", "Choose options on the both side")
 
-
+#SHFAQJA E BUTONAVE PER SELEKTIM TE KOLONES SE PARE DHE TE DYTE (KONVERTIMIT NGA NJE BAZE NE BAZE TJETER)
 now_a = None
 buttons_a = None
 var_a1 = IntVar()
@@ -275,10 +275,7 @@ for b in buttons_b:
     b.grid(row=y_b, column=2, sticky=W)
     y_b = y_b + 1
 
-#START OF RESULT SECTION
-button_convert = Button(root, text="CONVERT", bd=5, relief="groove", bg="#0BD72D", width=15,  command=convert)
-button_convert.grid(row=7, columnspan=3)
-
+#HISTORY
 def history():
     try:
         filename = "history.txt"
@@ -297,6 +294,10 @@ btn_history = Button(root, text="HISTORY", bd=5, width=15, bg="grey", relief="gr
 btn_history.grid(row=1, column=4)
 
 label_space.grid(row=8)
+
+# RESULT SECTION
+button_convert = Button(root, text="CONVERT", bd=5, relief="groove", bg="#0BD72D", width=15,  command=convert)
+button_convert.grid(row=7, columnspan=3)
 
 l_bin = Label(root, text="Answer: ")
 l_bin.grid(row=9, sticky=W)
